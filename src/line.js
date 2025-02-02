@@ -1,6 +1,14 @@
+import { FILLED } from "./constants";
+
 export class Line extends Array {
   constructor(...args) {
     super(...args);
+  }
+
+  fill(start, length = 1, value = FILLED) {
+    for (let i = start; i < start + length; i++) {
+      this[i] = value;
+    }
   }
 
   isComplete(numbers = []) {
@@ -14,7 +22,7 @@ export class Line extends Array {
     for (let i = 0; i <= this.length - 1; i++) {
       const cur = this[i];
 
-      if (cur === 2) {
+      if (cur === FILLED) {
         curIsBlock = true;
         curBlockCount++;
 
@@ -25,7 +33,7 @@ export class Line extends Array {
           curIsBlock = false;
 
           // Block is longer than it should be
-          if (i < this.length - 1 && this[i + 1] === 2) {
+          if (i < this.length - 1 && this[i + 1] === FILLED) {
             throw new Error("Block is longer than it should be");
           }
         }
