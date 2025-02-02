@@ -1,0 +1,22 @@
+{
+  "name": "nonogram",
+  "version": "1.0.0",
+  "description": "Nonogram solver written in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrchimp/nonogram.git"
+  },
+  "author": "Mr Chimp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrchimp/nonogram/issues"
+  },
+  "homepage": "https://github.com/mrchimp/nonogram#readme",
+  "devDependencies": {
+    "vitest": "^3.0.4"
+  }
+}
