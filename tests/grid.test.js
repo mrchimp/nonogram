@@ -89,6 +89,18 @@ test("Is complete", () => {
     [2, 0, 2],
     [2, 2, 2],
   ]);
-  expect(grid.isComplete([[1], [1, 1], [3]], [[2], [1, 1], [2]])).toBe(true);
-  expect(grid.isComplete([[2], [1], [1]], [[3], [3], [3]])).toBe(false);
+  grid.setNumbers([[1], [1, 1], [3]], [[2], [1, 1], [2]]);
+  expect(grid.isComplete()).toBe(true);
+  grid.setNumbers([[2], [1], [1]], [[3], [3], [3]]);
+  expect(grid.isComplete()).toBe(false);
+});
+
+test("Can convert to string", () => {
+  const grid = new Grid(5);
+  grid.setGrid([
+    [0, 1, 2],
+    [2, 1, 0],
+    [1, 1, 1],
+  ]);
+  expect(grid.toString()).toBe("012210111");
 });

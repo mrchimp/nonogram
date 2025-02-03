@@ -1,10 +1,10 @@
+import { formatGrid } from "./format";
 import { Line } from "./line";
 
 export class Grid {
   constructor(size, rowNumbers, colNumbers) {
     this.size = size;
-    this.rowNumbers = rowNumbers;
-    this.colNumbers = colNumbers;
+    this.setNumbers(rowNumbers, colNumbers)
     this.grid = [...Array(this.size)].map(() => Array(this.size).fill(0));
   }
 
@@ -49,13 +49,21 @@ export class Grid {
     }
   }
 
-  isComplete(rowNumbers, colNumbers) {
+  setNumbers(rowNumbers, colNumbers) {
+    this.rowNumbers = rowNumbers;
+    this.colNumbers = colNumbers;
+  }
+
+  getNumbers(isColumn) {
+    return isColumn ? this.colNumbers : this.rowNumbers;
+  }
+
+  isComplete() {
     for (const isColumn in [true, false]) {
+      const numbers = this.getNumbers(isColumn);
       for (let i = 0; i < this.size - 1; i++) {
         const line = this.getLine(i, isColumn);
-        const isComplete = line.isComplete(
-          isColumn ? colNumbers[i] : rowNumbers[i],
-        );
+        const isComplete = line.isComplete(numbers[i]);
 
         if (!isComplete) {
           return false;
@@ -64,5 +72,9 @@ export class Grid {
     }
 
     return true;
+  }
+
+  toString() {
+    return formatGrid(this);
   }
 }

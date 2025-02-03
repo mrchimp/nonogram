@@ -1,4 +1,5 @@
 import { FILLED } from "./constants";
+import { formatLine } from "./format";
 
 export class Line extends Array {
   constructor(...args) {
@@ -46,5 +47,9 @@ export class Line extends Array {
     }
 
     return completeBlockCount === totalBlockCount;
+  }
+
+  toString() {
+    return formatLine(this);
   }
 }
