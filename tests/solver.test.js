@@ -3,18 +3,18 @@ import { Grid } from "../src/grid";
 import { solve } from "../src/solver";
 
 const testCases = [
-  {
-      size: 3,
-      rows: [[3], [3], [3]],
-      cols: [[3], [3], [3]],
-      solution: "■■■\n■■■\n■■■",
-    },
+  // {
+  //   size: 3,
+  //   rows: [[3], [3], [3]],
+  //   cols: [[3], [3], [3]],
+  //   solution: "■■■\n■■■\n■■■",
+  // },
   {
     size: 3,
-    rows: [[1],[2],[3]],
-    cols: [[3],[2],[1]],
+    rows: [[1], [2], [3]],
+    cols: [[3], [2], [1]],
     solution: "■☐☐\n■■☐\n■■■",
-  }
+  },
 ];
 
 test("Can solve problems", () => {

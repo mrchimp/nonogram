@@ -4,7 +4,7 @@ import { Line } from "./line";
 export class Grid {
   constructor(size, rowNumbers, colNumbers) {
     this.size = size;
-    this.setNumbers(rowNumbers, colNumbers)
+    this.setNumbers(rowNumbers, colNumbers);
     this.grid = [...Array(this.size)].map(() => Array(this.size).fill(0));
   }
 

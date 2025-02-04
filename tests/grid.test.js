@@ -96,11 +96,11 @@ test("Is complete", () => {
 });
 
 test("Can convert to string", () => {
-  const grid = new Grid(5);
+  const grid = new Grid(3);
   grid.setGrid([
     [0, 1, 2],
     [2, 1, 0],
     [1, 1, 1],
   ]);
-  expect(grid.toString()).toBe("012210111");
+  expect(grid.toString()).toBe("☐☒■\n■☒☐\n☒☒☒");
 });

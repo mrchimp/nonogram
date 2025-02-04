@@ -1,4 +1,5 @@
 import { fullLine } from "./algorithms/full-line";
+import { middleCrossing } from "./algorithms/middle-crossing";
 import { formatGrid } from "./format";
 
 export function solve(grid) {
@@ -6,6 +7,10 @@ export function solve(grid) {
     {
       name: "Full Line",
       function: fullLine,
+    },
+    {
+      name: "Middle Crossing",
+      function: middleCrossing,
     },
   ];
 
