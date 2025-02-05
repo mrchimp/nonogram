@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Nonogram solver written in JavaScript",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,7 @@
   },
   "homepage": "https://github.com/mrchimp/nonogram#readme",
   "devDependencies": {
+    "vite": "^6.1.0",
     "vitest": "^3.0.4"
   }
 }
